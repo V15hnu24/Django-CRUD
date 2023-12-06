@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Todos - My Website{% endblock %}
+{% block header %}Todos{% endblock %}
+{% block content %}
+    <section>
+        <h2>Todos</h2>
+        <ul>
+            {% for todo in todos %}
+                <li>
+                    {{ todo.title }}:
+                    {% if todo.completed %}
+                        <strong>Completed</strong>
+                    {% else %}
+                        <strong>Not Completed</strong>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
